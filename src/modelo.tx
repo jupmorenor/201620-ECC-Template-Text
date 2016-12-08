@@ -5,7 +5,8 @@ Modelo:
 
 Carta:
 	'carta' nombre=ID '{'
-		personas+=Persona[',']
+		'destinatario' destinatario=[Destinatario] ','
+		'remitente' remitente=[Remitente]
 	'}'
 ;
 
@@ -14,7 +15,7 @@ Persona:
 ;
 
 Destinatario:
-	'destinatario' id=ID '{'
+	'destinatario' name=ID '{'
 	'nombre' nombre=STRING 
 	'genero' genero=Genero
 	'domicilio' domicilio=Domicilio
@@ -22,14 +23,14 @@ Destinatario:
 ;
 
 Remitente:
-	'remitente' id=ID '{'
+	'remitente' name=ID '{'
 	'nombre' nombre=STRING
 	'dependencia' dependencia=STRING
 '}'
 ;
 
 Domicilio:
-	'domicilio' id=ID '{'
+	'domicilio' name=ID '{'
 	'direccion' direccion=STRING
 	'barrio' barrio=STRING
 	'ciudad' ciudad=STRING

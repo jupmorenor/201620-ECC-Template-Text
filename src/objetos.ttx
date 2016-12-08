@@ -3,6 +3,11 @@ remitente Ramon {
 	dependencia 'Canal Cristovision'
 }
 
+remitente Apdaza {
+	nombre 'Alejandro Daza'
+	dependencia 'Universidad Distrital'
+}
+
 destinatario Yamile {
 	nombre 'Yamile Pulido Alonso'
 	genero F
@@ -13,35 +18,32 @@ destinatario Yamile {
 	}
 }
 
-carta Carta1 {
-	destinatario Yamile {
-		nombre 'Yamile Pulido Alonso'
-		genero F
-		domicilio domicilio Dir_Yamile {
-			direccion 'KR 64A 62C 59 sur'
-			barrio 'Isla del Sol'
-			ciudad 'Bogota'
-		}
-	},
-	remitente Ramon {
-		nombre 'Ramon Zambrano'
-		dependencia 'Canal Cristovision'
+destinatario Juanpa {
+	nombre 'Juan Pablo Moreno'
+	genero M
+	domicilio domicilio Dir_Juanpa {
+		direccion 'KR 64A 62C 59 sur'
+		barrio 'Isla del Sol'
+		ciudad 'Bogota'
 	}
+}
+
+carta Carta1 {
+	destinatario Yamile,
+	remitente Ramon
 }
 
 carta Carta2 {
-	destinatario Juanpa {
-		nombre 'Juan Pablo Moreno'
-		genero F
-		domicilio domicilio Dir_juanpa {
-			direccion 'KR 64A 62C 59 sur'
-			barrio 'Isla del Sol'
-			ciudad 'Bogota'
-		}
-	},
-	remitente Ramon {
-		nombre 'Ramon Zambrano'
-		dependencia 'Canal Cristovision'
-	}
+	destinatario Juanpa,
+	remitente Ramon
 }
 
+carta Carta3 {
+	destinatario Juanpa,
+	remitente Apdaza
+}
+
+carta Carta4 {
+	destinatario Yamile,
+	remitente Apdaza
+}
