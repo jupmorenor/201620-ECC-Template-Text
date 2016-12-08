@@ -1,0 +1,22 @@
+carta Carta1 inicio
+	Yamile
+	Ramon
+fin
+
+destinatario Yamile inicio
+	nombre "Yamile Pulido Alonso"
+	genero F
+	domicilio dir1
+fin	
+
+domicilio Dir_Yamile inicio
+	direccion "KR 64A 62C 59 sur"
+	barrio "Isla del Sol"
+	ciudad "Bogota"
+fin
+
+remitente Ramon inicio
+	nombre "Ramon Zambrano"
+	dependencia "Canal Cristovision"
+fin
+

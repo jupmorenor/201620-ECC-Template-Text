@@ -1,0 +1,40 @@
+Modelo:
+	cartas+=Carta
+;
+
+Carta:
+	'carta' nombre=ID 'inicio'
+		personas+=[Persona]
+	'fin'
+;
+
+Persona:
+	Destinatario | Remitente
+;
+
+Destinatario:
+	'destinatario' id=ID 'inicio'
+	'nombre' '"' nombre=STRING '"'
+	'genero' genero=Genero
+	'domicilio' domicilio=Domicilio
+'fin'
+;
+
+Remitente:
+	'remitente' id=ID 'inicio'
+	'nombre' '"' nombre=STRING '"'
+	'dependencia' '"' dependencia=STRING '"'
+'fin'
+;
+
+Domicilio:
+	'domicilio' id=ID 'inicio'
+	'direccion' '"' direccion=STRING '"'
+	'barrio' '"' barrio=STRING '"'
+	'ciudad' '"' ciudad=STRING '"'
+'fin'
+;
+
+Genero:
+	'M' | 'F'
+;
