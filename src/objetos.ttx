@@ -1,22 +1,47 @@
-carta Carta1 inicio
-	Yamile
-	Ramon
-fin
+remitente Ramon {
+	nombre 'Ramon Zambrano'
+	dependencia 'Canal Cristovision'
+}
 
-destinatario Yamile inicio
-	nombre "Yamile Pulido Alonso"
+destinatario Yamile {
+	nombre 'Yamile Pulido Alonso'
 	genero F
-	domicilio dir1
-fin	
+	domicilio domicilio Dir_Yamile {
+		direccion 'KR 64A 62C 59 sur'
+		barrio 'Isla del Sol'
+		ciudad 'Bogota'
+	}
+}
 
-domicilio Dir_Yamile inicio
-	direccion "KR 64A 62C 59 sur"
-	barrio "Isla del Sol"
-	ciudad "Bogota"
-fin
+carta Carta1 {
+	destinatario Yamile {
+		nombre 'Yamile Pulido Alonso'
+		genero F
+		domicilio domicilio Dir_Yamile {
+			direccion 'KR 64A 62C 59 sur'
+			barrio 'Isla del Sol'
+			ciudad 'Bogota'
+		}
+	},
+	remitente Ramon {
+		nombre 'Ramon Zambrano'
+		dependencia 'Canal Cristovision'
+	}
+}
 
-remitente Ramon inicio
-	nombre "Ramon Zambrano"
-	dependencia "Canal Cristovision"
-fin
+carta Carta2 {
+	destinatario Juanpa {
+		nombre 'Juan Pablo Moreno'
+		genero F
+		domicilio domicilio Dir_juanpa {
+			direccion 'KR 64A 62C 59 sur'
+			barrio 'Isla del Sol'
+			ciudad 'Bogota'
+		}
+	},
+	remitente Ramon {
+		nombre 'Ramon Zambrano'
+		dependencia 'Canal Cristovision'
+	}
+}
 

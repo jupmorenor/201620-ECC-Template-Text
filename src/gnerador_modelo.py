@@ -1,16 +1,7 @@
-#from __future__ import unicode_literals
+from __future__ import unicode_literals
 from subprocess import call
 from textx.metamodel import metamodel_from_file
 from textx.export import metamodel_export, model_export
-
-class OtroTipo(object):
-	
-	def __init__(self, parent, nombre):
-		self.parent = parent
-		self.nombre = nombre
-		
-	def __str__(self):
-		return self.nombre
 
 def obtener_metamodelo():
 	archivo = "modelo.tx"

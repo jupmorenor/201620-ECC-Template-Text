@@ -1,11 +1,12 @@
 Modelo:
-	cartas+=Carta
+	personas*=Persona
+	cartas*=Carta
 ;
 
 Carta:
-	'carta' nombre=ID 'inicio'
-		personas+=[Persona]
-	'fin'
+	'carta' nombre=ID '{'
+		personas+=Persona[',']
+	'}'
 ;
 
 Persona:
@@ -13,26 +14,26 @@ Persona:
 ;
 
 Destinatario:
-	'destinatario' id=ID 'inicio'
-	'nombre' '"' nombre=STRING '"'
+	'destinatario' id=ID '{'
+	'nombre' nombre=STRING 
 	'genero' genero=Genero
 	'domicilio' domicilio=Domicilio
-'fin'
+'}'
 ;
 
 Remitente:
-	'remitente' id=ID 'inicio'
-	'nombre' '"' nombre=STRING '"'
-	'dependencia' '"' dependencia=STRING '"'
-'fin'
+	'remitente' id=ID '{'
+	'nombre' nombre=STRING
+	'dependencia' dependencia=STRING
+'}'
 ;
 
 Domicilio:
-	'domicilio' id=ID 'inicio'
-	'direccion' '"' direccion=STRING '"'
-	'barrio' '"' barrio=STRING '"'
-	'ciudad' '"' ciudad=STRING '"'
-'fin'
+	'domicilio' id=ID '{'
+	'direccion' direccion=STRING
+	'barrio' barrio=STRING
+	'ciudad' ciudad=STRING
+'}'
 ;
 
 Genero:
