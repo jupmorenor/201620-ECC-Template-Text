@@ -4,7 +4,7 @@ from textx.metamodel import metamodel_from_file
 from textx.export import metamodel_export, model_export
 
 def obtener_metamodelo():
-	archivo = "modelo.tx"
+	archivo = "../modelos/modelo.tx"
 
 	metamodelo = metamodel_from_file(archivo)
 	metamodel_export(metamodelo, archivo + ".dot")
@@ -12,7 +12,7 @@ def obtener_metamodelo():
 	return metamodelo
 
 def obtener_modelo(metamodelo):
-	archivo = "objetos.ttx"
+	archivo = "../modelos/objetos.ttx"
 	modelo = metamodelo.model_from_file(archivo)
 	model_export(modelo, archivo + ".dot")
 	call("dot -Tpng -O " + archivo + ".dot")
