@@ -1,3 +1,34 @@
-carta: {{carta.nombre}}
-Enviar a: {{carta.destinatario.nombre}}
-Enviado por: {{carta.remitente.nombre}}
+{{ carta.remitente.ciudad }}, {{ carta.fecha.dia }} de {{ carta.fecha.mes }} de {{ carta.fecha.anno }}
+
+{% macro generizar(gen) -%}
+	{% if gen == 'F' %}a{% elif gen == 'M'%}o{% endif %}
+{%- endmacro %}
+
+{% macro completar(gen) -%}
+	{% if gen == 'F' %}a{% endif %}
+{%- endmacro %}
+
+Senor{{ completar(carta.destinatario.genero) }}
+
+{{ carta.destinatario.nombre }}
+
+{{ carta.destinatario.domicilio.direccion}} {{carta.destinatario.domicilio.barrio}}
+
+{{ carta.destinatario.domicilio.ciudad }}
+
+
+Apreciad{{ generizar(carta.destinatario.genero) }} {{ carta.destinatario.name }}.
+
+
+{% block cuerpo %}
+Este es el cuerpo de la carta dirigida a {{ carta.destinatario.name }}.
+
+{% endblock %}
+
+
+Atentamente,
+
+
+{{ carta.remitente.nombre }}
+
+{{ carta.remitente.dependencia }}

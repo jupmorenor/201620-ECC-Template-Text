@@ -5,6 +5,7 @@ Modelo:
 
 Carta:
 	'carta' nombre=ID '{'
+		'fecha' fecha=Fecha ','
 		'destinatario' destinatario=[Destinatario] ','
 		'remitente' remitente=[Remitente]
 	'}'
@@ -26,6 +27,7 @@ Remitente:
 	'remitente' name=ID '{'
 	'nombre' nombre=STRING
 	'dependencia' dependencia=STRING
+	'ciudad' ciudad=STRING
 '}'
 ;
 
@@ -40,3 +42,7 @@ Domicilio:
 Genero:
 	'M' | 'F'
 ;
+
+Fecha:
+	dia=INT ',' mes=STRING ',' anno=INT
+;	

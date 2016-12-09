@@ -1,3 +1,5 @@
+# -*- coding:utf-8 -*-
+from __future__ import unicode_literals
 from os.path import dirname, join
 from subprocess import call
 from textx.metamodel import metamodel_from_file
