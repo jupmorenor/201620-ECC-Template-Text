@@ -1,4 +1,7 @@
-from os.path import dirname, join
+# -*- coding:utf-8 -*-
+from __future__ import unicode_literals
+from os import mkdir
+from os.path import dirname, join, exists
 from jinja2 import Environment, FileSystemLoader
 from gen_mod import obtener_metamodelo, obtener_modelo
 
@@ -12,5 +15,20 @@ def preparar_jinja():
 		lstrip_blocks=True
 	)
 
-def cargar_plantilla(jinja_env, plantilla):
-	return jinja_env.get_template(plantilla)
+def main():
+	metamodelo = obtener_metamodelo()
+	modelo = obtener_modelo(metamodelo)
+	jinja_env = preparar_jinja()
+	plantilla = jinja_env.get_template(join(obtener_raiz(), "/modelos/plantilla.txt"))
+	carpeta = join(obtener_raiz(), "cartas")
+	
+	if not exists(carpeta):
+		mkdir(carpeta)
+	
+	for carta in modelo.cartas:
+		with open(join(carpeta, carta.nombre + ".txt"), 'w') as f:
+			f.write(plantilla.render(carta=carta))
+			print carta.nombre, "ok"
+
+if __name__ == '__main__':
+	main()
